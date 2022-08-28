@@ -17,11 +17,7 @@ export const Navbar = () => {
              
               <i onClick={handlOpenSidebar} class="fa fa-th-large fa-2x hamBar" aria-hidden="true"></i>
               <Link to="/">
-              <img
-                className="wtf-logo"
-                src="https://wtfup.me/assets/assets/logo.png"
-                alt="wtf"
-              />
+              
               </Link>
             </li>
           </ul>

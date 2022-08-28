@@ -1,14 +1,15 @@
 const express = require("express");
 //const passport = require("passport");
-
+const cors = require('cors');
 const { register, login } = require("./controllers/auth.controller");
 const productController = require("./controllers/product.controller");
-let user
+let user;
  const passport=require("./configs/passport")
 const app = express();
 
 app.use(express.json());
 app.use(passport.initialize())
+app.use(cors())
 
 passport.serializeUser(function({user, token}, done){
   done(null, {user, token})
