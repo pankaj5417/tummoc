@@ -1,0 +1,87 @@
+.navbarContainer {
+  height: 80px;
+  width: 100%;
+  background-color: black;
+
+  /* padding: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.navbarLeft {
+  width: 180px;
+  color: white;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: white; */
+}
+.wtf-logo {
+  width: 100px;
+  position: absolute;
+  top: 23px;
+  left: 100px;
+}
+
+::placeholder {
+  font-size: 18px;
+  color: #607d8b;
+  opacity: 1;
+}
+.navbarRight {
+  width: 780px;
+  font-weight: 200;
+  margin-right: 70px;
+  color: #607d8b;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbarRightText {
+  color: grey;
+}
+.navbarRight > li > a.active,
+.navbarRight > li > a:focus {
+  border-bottom: 0.1875rem solid #5e0707;
+}
+.navbarRightText:hover {
+  color: white;
+}
+.login-button {
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+
+  font-size: 23px;
+  background-color: #5e0707;
+  font-weight: 100;
+  color: lightgray;
+  border-radius: 6px;
+}
+
+ul {
+  list-style: none;
+}
+@media screen and (min-width: 700px) {
+  .hamBar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbarRight > li {
+    display: none;
+  }
+}
+a {
+  text-decoration: none;
+}
