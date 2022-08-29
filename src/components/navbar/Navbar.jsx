@@ -5,13 +5,12 @@ import { Sidebar } from "../sidebar/Sidebar";
 import "./navbar.css";
 export const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState("false");
-  const { loading, userDetail, error } = useSelector(
-    (state) => ({
-      loading: state.loginState.loading,
-      userDetail: state.loginState.userDetail,
-      error: state.loginState.error,
-    }))
-    console.log(userDetail)
+  const { loading, userDetail, error } = useSelector((state) => ({
+    loading: state.loginState.loading,
+    userDetail: state.loginState.userDetail,
+    error: state.loginState.error,
+  }));
+  console.log("userDetails", userDetail);
   const handlOpenSidebar = () => {
     openSidebar ? setOpenSidebar(false) : setOpenSidebar(true);
   };
@@ -22,28 +21,28 @@ export const Navbar = () => {
         <div>
           <ul className="navbarLeft">
             <li className="navbarLeft">
-             
-              <i onClick={handlOpenSidebar} class="fa fa-th-large fa-2x hamBar" aria-hidden="true"></i>
-              <Link to="/">
-              
-              </Link>
+              <i
+                onClick={handlOpenSidebar}
+                class="fa fa-th-large fa-2x hamBar"
+                aria-hidden="true"
+              ></i>
+              <Link to="/"></Link>
             </li>
           </ul>
         </div>
 
         <div>
           <ul className="navbarRight">
-           
             <div className="loginRegisterButtonContainer">
-              {userDetail?
-              <>
-              <span style={{color:"white"}}>{userDetail.name}</span>&nbsp;
-               <button className="login-button">Logout</button>
-
-              </>:
-              <button className="login-button">Login</button>
-              
-              }
+              {userDetail.name ? (
+                <>
+                  <h1 style={{ color: "white" }}>{userDetail.name}</h1>
+                  &nbsp;
+                  <button className="login-button">Logout</button>
+                </>
+              ) : (
+                <button className="login-button">Login</button>
+              )}
             </div>
           </ul>
         </div>

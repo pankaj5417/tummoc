@@ -28,8 +28,9 @@ export const getUserDetails = (userData) => (dispatch) => {
       })
         .then((e) => e.json())
         .then((res) => {
-            dispatch(loginSuccess(res))
-           console.log("userData",res)
+            dispatch(loginSuccess(res.user))
+            alert("Login Successfull")
+           console.log("userData",res.user)
         });
     } catch (e) {
       alert("Could not post data");

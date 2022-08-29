@@ -11,7 +11,7 @@ export const reducer=(state=initialState,{type,payload})=>{
 
             case LOGIN_SUCCESS:
                 return {
-                    ...state,userDetail:{...state.userDetail,payload},
+                    ...state,userDetail:{...state.userDetail,...payload},
                     loading:false
                 }
 

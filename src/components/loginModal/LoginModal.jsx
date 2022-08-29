@@ -134,13 +134,13 @@ export default function LoginModal() {
                 Sign in with Google
               </Button>
 
-              <a  onClick={handleGoogleSignIn} href="/auth/google" class="button">Sign in with Google</a>  */}
+              <a  onClick={handleGoogleSignIn} href="/auth/google" class="button">Sign in with Google</a>   */}
               <Button
                 type="submit"
                 onClick={loginUser}
                 style={{
                   backgroundColor: "red",
-                  width:"90%",
+                  width: "90%",
                   padding: "8px 25px",
                   fontWeight: "400",
                 }}
