@@ -18,7 +18,7 @@ export const loginError=(err)=>({
 export const getUserDetails = (userData) => (dispatch) => {
     try {
         dispatch(loginLoading())
-      fetch(`http://localhost:2345/login`, {
+      fetch(`https://tummoc2.herokuapp.com/login`, {
         method: "POST",
         body: JSON.stringify(userData),
         headers: {
@@ -41,7 +41,7 @@ export const getUserDetails = (userData) => (dispatch) => {
   export const signInWithGoogle = (userData) => (dispatch) => {
     try {
         dispatch(loginLoading())
-      fetch(`http://localhost:2345/auth/google`, {
+      fetch(`https://tummoc2.herokuapp.com/auth/google`, {
        
        mode:"no-cors" 
       })
@@ -60,7 +60,7 @@ export const getUserDetails = (userData) => (dispatch) => {
 export const getLoginData=()=>(dispatch)=>{
    
     dispatch(loginLoading())
-     fetch("http://localhost:2345/login")
+     fetch("https://tummoc2.herokuapp.com/login")
    .then((d)=>d.json()).then((data)=>{
        dispatch(loginSuccess(data))
        console.log("loginData",data)
