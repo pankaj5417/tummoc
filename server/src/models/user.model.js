@@ -30,4 +30,4 @@ userSchema.methods.checkPassword = function (password) {
   });
 };
 
-module.exports = model("user", userSchema); // users
+module.exports = model("userdb", userSchema); // users
