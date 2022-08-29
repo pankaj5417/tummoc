@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-
+const dotenv=require('dotenv')
+dotenv.config()
 module.exports = () => {
-  return mongoose.connect("mongodb://localhost:27017/web12-authentication");
+  return mongoose.connect(process.env.DB_URL);
 };
