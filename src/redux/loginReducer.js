@@ -1,5 +1,5 @@
 import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS } from "./loginActionType";
-const initialState={userDetail:{email:"",password:""}}
+const initialState={userDetail:{}}
 export const reducer=(state=initialState,{type,payload})=>{
     switch(type){
         case LOGIN_LOADING:
