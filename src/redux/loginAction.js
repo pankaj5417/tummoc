@@ -18,7 +18,7 @@ export const loginError=(err)=>({
 export const getUserDetails = (userData) => (dispatch) => {
     try {
         dispatch(loginLoading())
-      fetch(`https://tummoc2.herokuapp.com`, {
+      fetch(`https://tummoc2.herokuapp.com/login`, {
         method: "POST",
         body: JSON.stringify(userData),
         mode:"no-cors",
