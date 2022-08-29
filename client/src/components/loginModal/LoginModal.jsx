@@ -10,6 +10,7 @@ import {
   loginError,
   loginLoading,
   loginSuccess,
+  signInWithGoogle,
 } from "../../redux/loginAction";
 
 const style = {
@@ -70,6 +71,10 @@ export default function LoginModal() {
   const loginUser = () => {
     dispatch(getUserDetails(formData));
   };
+
+  const handleGoogleSignIn = () => {
+    dispatch(signInWithGoogle());
+  };
   return (
     <div>
       <Modal
@@ -85,7 +90,7 @@ export default function LoginModal() {
             component="h2"
             textAlign="center"
           >
-            Please fill the user details below
+            Please fill the Login details below
           </Typography>
           <form onSubmit={(e) => e.preventDefault()}>
             <Box
@@ -117,28 +122,31 @@ export default function LoginModal() {
                 justifyContent: "space-between",
               }}
             >
-              <Button
+              {/* <Button
                 style={{
                   backgroundColor: "black",
                   padding: "8px 25px",
                   fontWeight: "400",
                 }}
                 variant="contained"
-                onClick={handleClose}
+                onClick={handleGoogleSignIn}
               >
-                Cancel
+                Sign in with Google
               </Button>
+
+              <a  onClick={handleGoogleSignIn} href="/auth/google" class="button">Sign in with Google</a>  */}
               <Button
                 type="submit"
                 onClick={loginUser}
                 style={{
                   backgroundColor: "red",
+                  width:"90%",
                   padding: "8px 25px",
                   fontWeight: "400",
                 }}
                 variant="contained"
               >
-                Submit
+                Login
               </Button>
             </Box>
           </form>

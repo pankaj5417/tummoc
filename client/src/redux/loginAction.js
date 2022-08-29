@@ -38,6 +38,25 @@ export const getUserDetails = (userData) => (dispatch) => {
   };
   
 
+  export const signInWithGoogle = (userData) => (dispatch) => {
+    try {
+        dispatch(loginLoading())
+      fetch(`http://localhost:2345/auth/google`, {
+       
+       mode:"no-cors" 
+      })
+        .then((e) => e.json())
+        .then((res) => {
+            dispatch(loginSuccess(res))
+           console.log("userData",res)
+        });
+    } catch (e) {
+      alert("Could not post data");
+      dispatch(loginError(e))
+      console.log("error in posting Data", e);
+    }
+  };
+
 export const getLoginData=()=>(dispatch)=>{
    
     dispatch(loginLoading())
