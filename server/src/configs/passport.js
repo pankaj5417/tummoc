@@ -6,7 +6,7 @@ const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 const User= require("../models/user.model")
 
-const uuid=require("uuidV4")
+const uuid=require("uuidv4")
 
 passport.use(new GoogleStrategy({
 

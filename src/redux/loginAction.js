@@ -21,6 +21,7 @@ export const getUserDetails = (userData) => (dispatch) => {
       fetch(`https://tummoc2.herokuapp.com/login`, {
         method: "POST",
         body: JSON.stringify(userData),
+        mode:"no-cors",
         headers: {
           "Content-Type": "application/json",
         },
