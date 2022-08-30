@@ -76,6 +76,7 @@ export default function LoginModal() {
     dispatch(signInWithGoogle());
   };
   return (
+    loading?<h1 style={{color:"white"}}>Loading...</h1>:
     <div>
       <Modal
         open={true}

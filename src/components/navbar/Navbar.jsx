@@ -14,6 +14,19 @@ export const Navbar = () => {
   const handlOpenSidebar = () => {
     openSidebar ? setOpenSidebar(false) : setOpenSidebar(true);
   };
+
+  const handleLogout=async()=>{
+    fetch("https://tummoc2.herokuapp.com/logout",{
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then(res=>res.json())
+    .then(res=>{
+      console.log("logout",res)
+    })
+  }
   return (
     <>
       <Sidebar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
@@ -38,7 +51,7 @@ export const Navbar = () => {
                 <>
                   <h1 style={{ color: "white" }}>{userDetail.name}</h1>
                   &nbsp;
-                  <button className="login-button">Logout</button>
+                  <button onClick={handleLogout} className="login-button">Logout</button>
                 </>
               ) : (
                 <button className="login-button">Login</button>

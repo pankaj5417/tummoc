@@ -14,14 +14,14 @@ passport.use(new GoogleStrategy({
 
     clientSecret:process.env.GOOGLE_CLIENT_SECRET,
 
-    callbackURL: "http://localhost:2345/auth/google/callback",
+    callbackURL: "https://tummoc2.herokuapp.com/auth/google/callback",
     userProfileURL: "https://**www**.googleapis.com/oauth2/v3/userinfo",
 
     passReqToCallback   : true
   },
 
  async function(request, accessToken, refreshToken, profile, done) {
-//console.log("accessToken, refreshToken, profile")
+console.log("accessToken, refreshToken, profile",profile)
     const email= profile?._json?.email
 
     let user;
