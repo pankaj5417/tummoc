@@ -19,7 +19,7 @@ export const Navbar = () => {
     fetch("https://tummoc2.herokuapp.com/logout",{
       method:"POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/text",
       },
     })
     .then(res=>res.json())
