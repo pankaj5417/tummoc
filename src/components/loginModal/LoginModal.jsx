@@ -37,7 +37,7 @@ const textFieldStyle = {
 export default function LoginModal() {
   const [open, setOpen] = useState(true);
   //   const handleOpen = () => setTimeout(() => setOpen(true),2000)
-  const handleClose = () => setOpen(false);
+  // const handleClose = () => setOpen(false);
   const initialState = {};
   const [formData, setFormData] = useState(initialState);
 
@@ -56,6 +56,7 @@ export default function LoginModal() {
   );
   const dispatch = useDispatch();
   const handleChange = (e) => {
+    e.preventDefault()
     const { name, value } = e.target;
 
     setFormData({ ...formData, [name]: value });
@@ -76,14 +77,14 @@ export default function LoginModal() {
     dispatch(signInWithGoogle());
   };
   return (
-    loading?<h1 style={{color:"white"}}>Loading...</h1>:
+    loading?<h1 style={{color:"white",marginTop:"140px",textAlign:"center"}}>Loading...</h1>:
     <div>
-      <Modal
+      {/* <Modal
         open={true}
-        onClose={handleClose}
+        // onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-      >
+      > */}
         <Box sx={style}>
           <Typography
             id="modal-modal-title"
@@ -106,11 +107,13 @@ export default function LoginModal() {
               <TextField
                 sx={textFieldStyle}
                 name="email"
+                required
                 placeholder="Email id"
                 onChange={handleChange}
               />
               <TextField
                 sx={textFieldStyle}
+                required
                 name="password"
                 placeholder="Enter your password *"
                 onChange={handleChange}
@@ -152,7 +155,7 @@ export default function LoginModal() {
             </Box>
           </form>
         </Box>
-      </Modal>
+      {/* </Modal> */}
     </div>
   );
 }

@@ -29,13 +29,14 @@ export const getUserDetails = (userData) => (dispatch) => {
         .then((e) => e.json())
         .then((res) => {
             dispatch(loginSuccess(res.user))
-            alert("Login Successfull")
-           console.log("userData",res.user)
+            console.log("userData",res)
+           res.user&& alert("Login Successfull")
+           res.message&& alert(res.message)
         });
     } catch (e) {
       alert("Could not post data");
       dispatch(loginError(e))
-      console.log("error in posting Data", e);
+      console.log("error in posting Data", e.message);
     }
   };
   
